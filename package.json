@@ -1,5 +1,6 @@
 {
   "name": "tailwind-1",
+  "homepage": "http://zan69.github.io/bejeweled",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
