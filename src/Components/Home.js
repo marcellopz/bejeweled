@@ -1,5 +1,4 @@
 import {Link} from "react-router-dom";
-import Leaderboard from "./Game/GameLeaderboard";
 
 function Home() {
     return (

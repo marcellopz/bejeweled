@@ -1,8 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {Card, Grid} from "@mui/material";
 import GameGem from "./GameGem";
-import {useDispatch, useSelector} from "react-redux";
-import {updateGrid} from "../store/gameStore";
+import {useSelector} from "react-redux";
 
 const GameGrid = () => {
     let movement_timer = null;
@@ -10,7 +9,6 @@ const GameGrid = () => {
     const refContainer = useRef();
     const [dimensions, setDimensions] =
         useState({});
-    const dispatch = useDispatch()
 
     const adjust_grid = () => {
         if (refContainer.current) {

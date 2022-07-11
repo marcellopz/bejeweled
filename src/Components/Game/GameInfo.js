@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo, useEffect, useState} from 'react';
 import {Box} from "@mui/material";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
@@ -10,33 +10,33 @@ import instance from "../AxiosInstance";
 const GameInfo = () => {
 
     const {points, player, time} = useSelector(state => state.game)
+    const [leaderboard, setLeaderboard] = useState([])
 
     const endGameHandler = () => {
         instance.post('/logs.json', {player: player, points: points}).then(response => {
             console.log(response)
+            window.location.reload()
         })
-        window.location.reload()
     }
 
     const getLeaderboard = async () => {
         let fetchedResults = []
-        await instance.get('/logs.json').then(r => {
+        instance.get('/logs.json').then(r => {
             for (let key in r.data) {
-                // fetchedResults.push({
-                //     player: r.data[key].player,
-                //     points: r.data[key].points,
-                //     id: key
-                // })
-                // TODO
+                fetchedResults.push({
+                    player: r.data[key].player,
+                    points: r.data[key].points,
+                    id: key
+                })
             }
+            fetchedResults.sort((a, b) => (a.points < b.points) ? 1 : -1)
+            setLeaderboard(fetchedResults)
         })
-        fetchedResults.sort((a, b) => (a.points > b.points) ? 1 : -1)
-        console.log(fetchedResults)
-        return fetchedResults
     }
 
-    // const leaderboard = getLeaderboard()
-    const leaderboard = []
+    useEffect(() => {
+        getLeaderboard()
+    }, [])
 
     return (
         <Box sx={{
@@ -69,4 +69,4 @@ const GameInfo = () => {
     );
 };
 
-export default GameInfo;
+export default memo(GameInfo);
