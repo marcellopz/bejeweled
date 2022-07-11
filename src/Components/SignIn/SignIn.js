@@ -8,20 +8,24 @@ import Typography from '@mui/material/Typography';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
 import {Paper} from "@mui/material";
 import {useNavigate} from "react-router-dom"
+import {useDispatch} from "react-redux";
+import {setPlayer} from "../store/gameStore";
 
 
 const theme = createTheme({});
 
 export default function SignIn() {
     let navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
         console.log({
-            email: data.get('User name'),
+            user: data.get('User name'),
             password: data.get('password'),
         });
+        dispatch(setPlayer(data.get('User name')))
         navigate("/game")
     };
 

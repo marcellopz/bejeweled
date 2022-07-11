@@ -9,15 +9,19 @@ const theme = createTheme({});
 
 const GameApp = () => {
 
-
     return (
         <ThemeProvider theme={theme}>
-            <div className="bg-red-300 h-screen">
+            <div className="bg-blue-300 h-screen">
                 <Grid container spacing={2} padding={3} className='h-full' wrap='wrap'>
                     <Grid item xs={12} md={4}>
                         <Grid container minWidth='300' className='h-full' display="flex" direction="column"
                               justifyContent='center'>
-                            <Paper sx={{height: 5 / 6}}>
+                            <Paper sx={{
+                                height: 5 / 6,
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center"
+                            }}>
                                 <GameInfo/>
                             </Paper>
                         </Grid>

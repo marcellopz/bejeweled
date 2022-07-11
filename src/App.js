@@ -9,18 +9,20 @@ import TourGrid from "./Components/TourSection/TourApp";
 import Tour from "./Components/TourSection/Tour";
 import GameApp from "./Components/Game/GameApp";
 import {Box} from "@mui/material";
+import AxiosPage from "./Components/AxiosPage";
 
 function App() {
     return (
         <Box>
             <Routes>
-                <Route path="/" element={<Home/>}/>
-                <Route path="test" element={<Test/>}/>
-                <Route path="about" element={<About/>}/>
-                <Route path="sign-in" element={<SignIn/>}/>
-                <Route path="tour" element={<TourGrid/>}/>
-                <Route path="tour/:id" element={<Tour/>}/>
-                <Route path="game" element={<GameApp/>}/>
+                <Route path="/" element={<GameApp/>}/>
+                {/*<Route path="test" element={<Test/>}/>*/}
+                {/*<Route path="about" element={<About/>}/>*/}
+                {/*<Route path="sign-in" element={<SignIn/>}/>*/}
+                {/*<Route path="tour" element={<TourGrid/>}/>*/}
+                {/*<Route path="tour/:id" element={<Tour/>}/>*/}
+                {/*<Route path="game" element={<GameApp/>}/>*/}
+                {/*<Route path="axios" element={<AxiosPage/>}/>*/}
             </Routes>
         </Box>
     );

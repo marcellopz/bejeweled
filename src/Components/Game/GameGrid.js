@@ -1,35 +1,45 @@
-import React from 'react';
-import {Card, Container, Grid} from "@mui/material";
+import React, {useEffect, useRef, useState} from 'react';
+import {Card, Grid} from "@mui/material";
 import GameGem from "./GameGem";
+import {useDispatch, useSelector} from "react-redux";
+import {updateGrid} from "../store/gameStore";
 
 const GameGrid = () => {
-    const makeArray = (ARRAY_LENGTH) => {
-        return Array.from(Array(ARRAY_LENGTH)).map(_ => Math.random())
+    let movement_timer = null;
+    const RESET_TIMEOUT = 300;
+    const refContainer = useRef();
+    const [dimensions, setDimensions] =
+        useState({});
+    const dispatch = useDispatch()
+
+    const adjust_grid = () => {
+        if (refContainer.current) {
+            const lower = refContainer.current.offsetHeight < refContainer.current.offsetWidth ? refContainer.current.offsetHeight : refContainer.current.offsetWidth
+            setDimensions({width: lower - 50, height: lower - 50})
+        }
     }
 
-    // const gemGrid = Array.from(Array(8)).map(() => makeArray(8))
-    const gemGrid = [
-        [0, 2, 3, 4, 5, 6, 2, 0],
-        [1, 2, 3, 4, 5, 6, 2, 0],
-        [1, 2, 3, 4, 5, 6, 2, 0],
-        [1, 2, 3, 4, 5, 6, 2, 0],
-        [1, 2, 3, 4, 5, 6, 2, 0],
-        [1, 2, 3, 4, 5, 6, 2, 0],
-        [1, 2, 3, 4, 5, 6, 2, 0],
-        [1, 2, 3, 4, 5, 6, 2, 0]
-    ]
+    useEffect(adjust_grid, [RESET_TIMEOUT])
 
+    window.addEventListener('resize', () => {
+        clearInterval(movement_timer)
+        movement_timer = setTimeout(adjust_grid, RESET_TIMEOUT)
+    })
+
+    const gemGrid = useSelector(state => state.game.gemGrid)
 
     return (
-        <Grid container justifyContent="center" alignItems="center" width="100%" height="100%">
+        <Grid container justifyContent="center" alignItems="center" width="100%" height="100%" ref={refContainer}>
             <Grid item>
-                <Card sx={{height: '700px', width: '700px', backgroundColor: 'lightGray'}}>
+                <Card sx={{width: dimensions.width, height: dimensions.height, backgroundColor: '#b2b1b1'}}>
                     <Grid container justifyContent="center" alignItems="center" width="100%"
                           height="100%" direction='column'>
                         <div className="grid grid-cols-8">
-                            {gemGrid.map((gemLine, i) => <>{gemLine.map((gemId, j) =>
-                                <GameGem id={gemId} x={i} y={j}/>
-                            )}</>)}
+                            {gemGrid.map((gemLine, i) => <React.Fragment key={i}>
+                                {gemLine.map((gemId, j) =>
+                                    <GameGem id={gemId} position={{x: i, y: j}} key={j}/>
+                                )}
+                            </React.Fragment>)}
                         </div>
                     </Grid>
                 </Card>
