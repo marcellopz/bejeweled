@@ -31,5 +31,3 @@ V
 src/data.json,3\4\34fd08abc90fc9b070958b89a283a21bb3b917d4
 M
 src/Components/store/store.js,c\d\cdd4ad7c7ddcae15172589354ca22501f2072abb
-<
-src/index.js,f\9\f900edc44cb929c2267a16100a32851f6d5b477d
