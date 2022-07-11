@@ -13,8 +13,8 @@ const root = ReactDOM.createRoot(
 root.render(
     // <React.StrictMode>
     <div>
-        {/*<BrowserRouter basename={process.env.PUBLIC_URL}>*/}
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
+            {/*<BrowserRouter>*/}
             <Provider store={store}>
                 <App/>
             </Provider>
