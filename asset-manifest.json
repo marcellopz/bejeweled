@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/bejeweled/static/css/main.5eb6d631.css",
+    "main.js": "/bejeweled/static/js/main.bcece4c3.js",
+    "static/js/787.c8be0384.chunk.js": "/bejeweled/static/js/787.c8be0384.chunk.js",
+    "static/media/3.png": "/bejeweled/static/media/3.59408d66bed1ecd998ca.png",
+    "static/media/4.png": "/bejeweled/static/media/4.42077a2348a02fe46d04.png",
+    "static/media/7.png": "/bejeweled/static/media/7.986b5b14b5b6395500c2.png",
+    "static/media/1.png": "/bejeweled/static/media/1.bd663950d6b938e8e128.png",
+    "static/media/5.png": "/bejeweled/static/media/5.c44082ae5542ab3b3704.png",
+    "static/media/6.png": "/bejeweled/static/media/6.65f7791536fe4a0e4c5f.png",
+    "static/media/2.png": "/bejeweled/static/media/2.7078d0b43ff4d8c5c873.png",
+    "index.html": "/bejeweled/index.html",
+    "main.5eb6d631.css.map": "/bejeweled/static/css/main.5eb6d631.css.map",
+    "main.bcece4c3.js.map": "/bejeweled/static/js/main.bcece4c3.js.map",
+    "787.c8be0384.chunk.js.map": "/bejeweled/static/js/787.c8be0384.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5eb6d631.css",
+    "static/js/main.bcece4c3.js"
+  ]
+}
