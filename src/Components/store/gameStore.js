@@ -77,14 +77,16 @@ const removeGems = (grid, combos, state = null) => {
 }
 
 const dropGems = (grid) => {
-    for (let i = 7; i !== -1; i--) {
-        for (let j = 7; j !== -1; j--) {
-            if (grid[i][j] === null) {
-                if (i === 0) {
-                    grid[i][j] = Math.floor(Math.random() * 7)
-                } else {
-                    grid[i][j] = grid[i - 1][j]
-                    grid[i - 1][j] = null
+    while (hasNull(grid)) {
+        for (let i = 7; i !== -1; i--) {
+            for (let j = 7; j !== -1; j--) {
+                if (grid[i][j] === null) {
+                    if (i === 0) {
+                        grid[i][j] = Math.floor(Math.random() * 7)
+                    } else {
+                        grid[i][j] = grid[i - 1][j]
+                        grid[i - 1][j] = null
+                    }
                 }
             }
         }
@@ -138,8 +140,6 @@ const hasCombos = (grid, gem1, gem2) => {
 
 const initialState = {
     points: 0,
-    player: 'player',
-    time: 0,
     selectedGem: {x: null, y: null},
     gemGrid: initialGrid()
 }
@@ -149,9 +149,6 @@ export const gameSlice = createSlice({
     name: 'game',
     initialState,
     reducers: {
-        increment: (state) => {
-            state.points += 1
-        },
         incrementByAmount: (state, action) => {
             state.points += action.payload
         },
@@ -191,7 +188,7 @@ export const gameSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const {increment, incrementByAmount, setPlayer, selectGem, updateGrid} = gameSlice.actions
+export const {incrementByAmount, setPlayer, selectGem, updateGrid} = gameSlice.actions
 
 const gameReducer = gameSlice.reducer
 

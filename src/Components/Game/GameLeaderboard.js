@@ -6,26 +6,28 @@ import ListItemText from '@mui/material/ListItemText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Dialog from '@mui/material/Dialog';
 import {memo, useState} from "react";
+import Typography from "@mui/material/Typography";
 
 function LeaderboardDialog(props) {
     const {onClose, open, leaderboard} = props;
-
-    console.log(leaderboard)
 
     const handleClose = () => {
         onClose();
     };
 
+
     return (
-        <Dialog onClose={handleClose} open={open} maxWidth="sm" fullWidth={true}>
+        <Dialog onClose={handleClose} open={open} maxWidth="xs" fullWidth={true}>
             <DialogTitle>Leaderboard:</DialogTitle>
             <List sx={{pt: 0}}>
                 {
                     leaderboard.length &&
                     leaderboard.map((entry, i) => (
-                        <ListItem key={i}>
-                            <ListItemText primary={entry.player}/>
-                            <ListItemText secondary={entry.points}/>
+                        <ListItem key={i} secondaryAction={entry.points} sx={{paddingX: 2}}>
+                            <Typography margin={2} sx={{fontWeight: 'bold'}}>
+                                {(i + 1).toString() + '.'}
+                            </Typography>
+                            <ListItemText primary={entry.player} secondary={entry.date}/>
                         </ListItem>
                     ))
                 }
