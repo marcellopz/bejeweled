@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/bejeweled/static/css/main.5eb6d631.css",
-    "main.js": "/bejeweled/static/js/main.c715704c.js",
+    "main.js": "/bejeweled/static/js/main.9b85cf04.js",
     "static/js/787.c8be0384.chunk.js": "/bejeweled/static/js/787.c8be0384.chunk.js",
     "static/media/3.png": "/bejeweled/static/media/3.59408d66bed1ecd998ca.png",
     "static/media/4.png": "/bejeweled/static/media/4.42077a2348a02fe46d04.png",
@@ -12,11 +12,11 @@
     "static/media/2.png": "/bejeweled/static/media/2.7078d0b43ff4d8c5c873.png",
     "index.html": "/bejeweled/index.html",
     "main.5eb6d631.css.map": "/bejeweled/static/css/main.5eb6d631.css.map",
-    "main.c715704c.js.map": "/bejeweled/static/js/main.c715704c.js.map",
+    "main.9b85cf04.js.map": "/bejeweled/static/js/main.9b85cf04.js.map",
     "787.c8be0384.chunk.js.map": "/bejeweled/static/js/787.c8be0384.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5eb6d631.css",
-    "static/js/main.c715704c.js"
+    "static/js/main.9b85cf04.js"
   ]
 }
