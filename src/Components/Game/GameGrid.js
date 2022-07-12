@@ -13,11 +13,11 @@ const GameGrid = () => {
     const adjust_grid = () => {
         if (refContainer.current) {
             const lower = refContainer.current.offsetHeight < refContainer.current.offsetWidth ? refContainer.current.offsetHeight : refContainer.current.offsetWidth
-            setDimensions({width: lower - 50, height: lower - 50})
+            setDimensions({width: lower * 0.95, height: lower * 0.95})
         }
     }
 
-    useEffect(adjust_grid, [RESET_TIMEOUT])
+    useEffect(adjust_grid, [])
 
     window.addEventListener('resize', () => {
         clearInterval(movement_timer)

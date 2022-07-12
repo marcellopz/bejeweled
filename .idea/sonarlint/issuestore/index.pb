@@ -5,8 +5,6 @@ A
 postcss.config.js,3\f\3f70684581fd16ab3be77ca959e0138ef3ee8bfb
 G
 src/Components/About.js,c\9\c90293adf70ed81694eb9af77f7c4b2cc8c1a23b
-A
-public/index.html,f\4\f43ecdf8d666ee908aacce037b4cd72159e4741b
 ;
 src/App.css,a\a\aa7165aefcf8ee3d73539e99ab007daf1aa18d8d
 =

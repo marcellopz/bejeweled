@@ -44,7 +44,7 @@ const EndGame = () => {
 
     return (
         <div>
-            <Button variant="outlined" onClick={handleClickOpen} sx={{margin: 5}}>
+            <Button variant="outlined" onClick={handleClickOpen} sx={{margin: {xs: 1, md: 5}}}>
                 End Game
             </Button>
             <Dialog open={open} onClose={handleClose}>

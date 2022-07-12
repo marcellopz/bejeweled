@@ -13,9 +13,9 @@ const GameApp = () => {
         <ThemeProvider theme={theme}>
             <div className="bg-blue-300 h-screen">
                 <Grid container spacing={2} padding={3} className='h-full' wrap='wrap'>
-                    <Grid item xs={12} md={4}>
-                        <Grid container minWidth='300' className='h-full' display="flex" direction="column"
-                              justifyContent='center'>
+                    <Grid item xs={12} md={4} height={{xs: '', md: '100%'}}>
+                        <Grid container minWidth='300' display="flex" direction="column"
+                              justifyContent='center' sx={{height: {xs: 'fit', md: '100%'}}}>
                             <Paper sx={{
                                 height: 5 / 6,
                                 display: "flex",

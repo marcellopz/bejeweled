@@ -24,7 +24,7 @@ const GameInfo = () => {
                 })
             }
             fetchedResults.sort((a, b) => (a.points < b.points) ? 1 : -1)
-            setLeaderboard(fetchedResults)
+            setLeaderboard(fetchedResults.slice(0, 10))
         })
     }
 
@@ -34,17 +34,16 @@ const GameInfo = () => {
 
     return (
         <Box sx={{
-            marginTop: 8,
             display: 'flex',
             flexDirection: "column",
             alignItems: 'center',
-            margin: 5,
+            margin: 1
         }}>
-            <Typography component="h1" variant="h5" margin={2}>
+            <Typography component="h1" sx={{margin: {xs: 1, md: 2}, fontSize: {xs: 20, md: 30}}}>
                 Points
             </Typography>
             <TextField value={points} InputProps={{readOnly: true, inputProps: {style: {textAlign: 'center'}}}}
-                       sx={{marginBottom: 5, justifyContent: 'center'}}/>
+                       sx={{marginBottom: {xs: 1, md: 5}, justifyContent: 'center'}}/>
             <EndGame/>
             <Leaderboard leaderboard={leaderboard}/>
         </Box>
