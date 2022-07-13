@@ -19,10 +19,14 @@ const GameGrid = () => {
 
     useEffect(adjust_grid, [])
 
-    window.addEventListener('resize', () => {
+    const resize = () => {
         clearInterval(movement_timer)
         movement_timer = setTimeout(adjust_grid, RESET_TIMEOUT)
-    })
+    }
+
+    window.onload = resize
+
+    window.addEventListener('resize', resize)
 
     const gemGrid = useSelector(state => state.game.gemGrid)
 

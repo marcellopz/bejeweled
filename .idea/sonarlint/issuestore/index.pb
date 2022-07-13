@@ -29,3 +29,14 @@ V
 src/data.json,3\4\34fd08abc90fc9b070958b89a283a21bb3b917d4
 M
 src/Components/store/store.js,c\d\cdd4ad7c7ddcae15172589354ca22501f2072abb
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+<
+package.json,7\0\7030d0b2f71b999ff89a343de08c414af32fc93a
+V
+&src/Components/Game/GameLeaderboard.js,c\6\c6bf36e412de7a26a754e3d1c66ad5a1152f90fc
+Q
+!src/Components/store/gameStore.js,5\4\54225345c8fb49fa4b214e88d4d97a8d43aef30c
+F
+src/Components/Home.js,e\6\e6c4a86c6fb0f4bd029af3cd68b48dd3dc84bace
